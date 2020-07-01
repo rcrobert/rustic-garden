@@ -31,3 +31,6 @@ And build it! Our target name for this is defined from the config file above, `a
 ❯ file target/armv7-unknown-linux-gnueabihf/debug/rustic-garden
 target/armv7-unknown-linux-gnueabihf/debug/rustic-garden: ELF 32-bit LSB shared object, ARM, EABI5 version 1 (SYSV), dynamically linked, interpreter /lib/ld-linux-armhf.so.3, for GNU/Linux 3.2.0, BuildID[sha1]=922cc4abb4da8fb97e79717ceea273317c784d9e, with debug_info, not stripped
 ```
+
+# Additional Resources
+[Design visual](https://app.lucidchart.com/invitations/accept/6f6af9d6-f526-4acd-97d5-98f85f599d54)
