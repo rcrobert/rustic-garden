@@ -1,4 +1,6 @@
 extern crate sysfs_gpio;
+extern crate log;
+extern crate pretty_env_logger;
 
 use signal_hook;
 use std::sync::mpsc::{channel, TryRecvError};
@@ -6,7 +8,15 @@ use std::thread;
 use std::time::Duration;
 use sysfs_gpio::{Direction, Pin};
 
+pub mod constants;
+pub mod logbook;
+
 fn main() {
+    // Bootstrapping
+    pretty_env_logger::init();
+
+
+
     let (sender, receiver) = channel::<i32>();
 
     // Listen for SIGINT for graceful shutdown
