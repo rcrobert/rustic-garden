@@ -1,6 +1,5 @@
 extern crate log;
 
-use super::constants;
 use chrono::Local;
 use log::{error, info};
 use serde::{Deserialize, Serialize};
@@ -73,7 +72,7 @@ impl Logbook {
     }
 
     /// Initializes the in-memory records cache, usually on on upstart.
-    fn refresh(&mut self, source: &mut dyn Read) -> io::Result<()> {
+    pub fn initialize(&mut self, source: &mut dyn Read) -> io::Result<()> {
         let reader = BufReader::new(source);
 
         // Deserialize
