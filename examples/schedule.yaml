@@ -1,0 +1,12 @@
+version: "0.1"
+valves:
+  - name: Main valve
+  - name: Pots valve
+schedules:
+  - name: Raised bed schedule
+    start_min: 420
+    duration_sec: 60
+    repeat_period: 3
+    repeat_unit: days
+    valves:
+      - name: Main Valve
