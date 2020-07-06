@@ -4,6 +4,7 @@ extern crate sysfs_gpio;
 
 pub mod constants;
 pub mod logbook;
+pub mod valve;
 pub mod environment;
 
 use environment::Environment;
