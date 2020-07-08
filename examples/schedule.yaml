@@ -1,12 +1,13 @@
 version: "0.1"
 valves:
   - name: Main valve
+    pin: 18
   - name: Pots valve
+    pin: 22
 schedules:
   - name: Raised bed schedule
-    start_min: 420
-    duration_sec: 60
-    repeat_period: 3
-    repeat_unit: days
+    start_offset_min: 420,
+    duration_min: 30,
+    repeat_period_days: 4,
     valves:
-      - name: Main Valve
+      - Main Valve

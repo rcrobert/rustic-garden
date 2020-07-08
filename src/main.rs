@@ -6,6 +6,7 @@ pub mod constants;
 pub mod logbook;
 pub mod valve;
 pub mod environment;
+pub mod calendar;
 
 use environment::Environment;
 

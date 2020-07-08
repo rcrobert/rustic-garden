@@ -240,7 +240,7 @@ mod tests {
         assert!(record.is_some());
 
         let record = record.unwrap();
-        assert!(matches!(record.started, Some(_)));
+        assert!(record.started.is_some());
     }
 
     /// Tests that the logbook `mark_completed` syncs to persistent storage by checking the storage
@@ -260,17 +260,14 @@ mod tests {
         assert!(record.is_some());
 
         let record = record.unwrap();
-        assert!(matches!(record.completed, Some(_)));
+        assert!(record.completed.is_some());
     }
 
     #[test]
     fn test_mark_completed_of_unstarted_schedule_fails() {
         let mut l = Logbook::new(Box::new(Vec::<u8>::new()));
 
-        assert!(match l.mark_completed(&String::from("any schedule")) {
-            Ok(_) => false,
-            Err(_) => true,
-        });
+        assert!(l.mark_completed(&String::from("any schedule")).is_err());
     }
 
     #[test]
@@ -291,10 +288,7 @@ mod tests {
         l.mark_completed(&schedule)
             .expect("first mark_completed succeeds");
 
-        assert!(match l.mark_completed(&schedule) {
-            Ok(_) => false,
-            Err(_) => true,
-        });
+        assert!(l.mark_completed(&schedule).is_err());
     }
 
     /// Helper to peek at the internal `Logbook` storage
