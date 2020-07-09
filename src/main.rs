@@ -2,11 +2,12 @@ extern crate log;
 extern crate pretty_env_logger;
 extern crate sysfs_gpio;
 
-pub mod constants;
-pub mod logbook;
-pub mod valve;
-pub mod environment;
-pub mod calendar;
+mod constants;
+mod logbook;
+mod valve;
+mod environment;
+mod calendar;
+mod config_persist;
 
 use environment::Environment;
 
