@@ -2,6 +2,9 @@ extern crate log;
 extern crate pretty_env_logger;
 extern crate sysfs_gpio;
 
+#[macro_use]
+extern crate static_assertions;
+
 mod constants;
 mod logbook;
 mod valve;
